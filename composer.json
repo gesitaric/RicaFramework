@@ -1,7 +1,9 @@
 {
     "require": {
         "monolog/monolog": "1.0.*",
-        "twig/twig": "~2.0"
+        "twig/twig": "~2.0",
+        "twbs/bootstrap": "^4.6",
+        "components/jquery": "^3.5"
     },
     "autoload": {
         "psr-4": {

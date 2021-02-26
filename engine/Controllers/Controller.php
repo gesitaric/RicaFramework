@@ -4,6 +4,6 @@ namespace Engine\Controllers;
 
 class Controller {
     public function list() {
-        return 'welcome.html';
+        return 'welcome.html.twig';
     }
 }
