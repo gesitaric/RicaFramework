@@ -3,7 +3,8 @@
 namespace Engine\Controllers;
 
 class Controller {
-    public function list() {
+
+    public static function list(): string {
         return 'welcome.html.twig';
     }
 }

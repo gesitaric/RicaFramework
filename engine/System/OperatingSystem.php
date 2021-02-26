@@ -17,8 +17,8 @@ class OperatingSystem {
         $this->templateSystem = new TemplateSystem($this->routerSystem);
     }
 
-    public function template() {
-        $exampleController = new \Engine\Controllers\WelcomeController();
-        return $this->templateSystem->twig->load($exampleController->list());
+    public function template():mixed {
+        $controllerAction = $this->routerSystem->requestCurrentPath();
+        return $this->templateSystem->twig->load($controllerAction);
     }
 }
