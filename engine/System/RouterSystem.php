@@ -18,10 +18,8 @@ class RouterSystem {
     }
 
     public function requestCurrentPath(Request $request): string {
-        $currentPath = $_SERVER['REQUEST_URI'];
-
         foreach ($this->globalSettings->routes() as $route) {
-            if ($route->path == $currentPath) {
+            if ($route->path == $request->uri) {
                 return $route->execute($request);
             }
         }

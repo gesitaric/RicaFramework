@@ -11,11 +11,13 @@ use Engine\Models\Request;
 
 class OperatingSystem {
     private $globalSettings;
+    private $request;
     private $routerSystem;
     private $templateSystem;
 
-    public function __construct(public Request $request) {
+    public function __construct() {
         $this->globalSettings = new GlobalSettings();
+        $this->request = new Request();
         $this->routerSystem = new RouterSystem($this->globalSettings);
         $this->templateSystem = new TemplateSystem($this->routerSystem);
     }
