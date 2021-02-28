@@ -3,6 +3,7 @@
 namespace Engine\Constants;
 
 use Engine\Models\Route;
+use Engine\Models\Request;
 
 use Engine\Controllers\WelcomeController;
 
@@ -14,7 +15,7 @@ class GlobalSettings {
 
     public function routes(): array {
         return [
-            Route::instantiate(path: '/index.php', action: WelcomeController::list())
+            Route::instantiate(path: '/', controller: WelcomeController::class, action: 'list')
         ];
     }
 }

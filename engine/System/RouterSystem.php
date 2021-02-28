@@ -2,6 +2,7 @@
 
 namespace Engine\System;
 
+use Engine\Models\Request;
 use Exception;
 
 class RouterSystem {
@@ -16,12 +17,12 @@ class RouterSystem {
         $this->cacheDirectory = $rootPath . $globalSettings::CACHE_PATH;
     }
 
-    public function requestCurrentPath(): string {
+    public function requestCurrentPath(Request $request): string {
         $currentPath = $_SERVER['REQUEST_URI'];
 
         foreach ($this->globalSettings->routes() as $route) {
             if ($route->path == $currentPath) {
-                return $route->action;
+                return $route->execute($request);
             }
         }
 
