@@ -23,7 +23,7 @@ class OperatingSystem {
     }
 
     public function template():mixed {
-        $controllerAction = $this->routerSystem->requestCurrentPath($this->request);
-        return $this->templateSystem->twig->load($controllerAction);
+        $response = $this->routerSystem->requestCurrentPath($this->request);
+        return $this->templateSystem->twig->load($response->path);
     }
 }

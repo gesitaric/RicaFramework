@@ -2,6 +2,8 @@
 
 namespace Engine\Models;
 
+use Engine\Models\Response;
+
 interface iHttpMethods {
     public static function get(string $path, string $controller, $action);
     public static function post(string $path, string $controller, $action);
@@ -43,7 +45,7 @@ class Route implements iHttpMethods {
 
     }
 
-    public function execute($request) {
+    public function execute($request): Response {
         $controller = new $this->controller;
         return $controller->{$this->action}($request);
     }
