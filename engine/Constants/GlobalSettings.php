@@ -10,6 +10,11 @@ class GlobalSettings {
     const TEMPLATE_PATH = '/view/templates/';
     const CACHE_PATH = '/cache/view/templates';
 
+    const DATABASE_NAME = 'RicaEngine';
+    const SERVER_NAME = "localhost";
+    const USERNAME = "username";
+    const PASSWORD = "password";
+
     const UNDEFINED_ROUTE = 'Current path is undefined';
     const NOT_FOUND = 'Not found';
 

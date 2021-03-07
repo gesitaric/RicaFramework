@@ -84,21 +84,6 @@ class Response {
     public function __construct(public string $path, public array $parameters = []) {}
 
     public static function instantiate(string $path, array $parameters = []): mixed {
-        $responseCode = self::isExistentPath($path) ? 200 : 404;
-
-        if ($responseCode == 200) {
-            return new self($path, $parameters);
-        }
-        
-        throw new Exception(self::$httpStatusCodes[$responseCode], $responseCode);
-    }
-
-    public static function isExistentPath($path): bool {
-        // TODO
-        // if (!file_exists('/'.$path)) {
-        //     return false;
-        // }
-
-        return true;
+        return new self($path, $parameters);
     }
 }
